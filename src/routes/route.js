@@ -14,6 +14,48 @@ router.get('/students', function (req, res){
     let students = ['Sabiha', 'Neha', 'Akash']
     res.send(students)
 })
+// <<<<<<< Updated upstream
+// =======
+
+// >>>>>>> Stashed changes
+// 1
+router.get('/movies', function(req, res){
+    let movies = ['Bahubali', 'Super30', 'Vikram', 'KGF'];
+    res.send(movies)
+})
+
+//  4
+router.get('/films', function(req, res){
+    let films = [ {
+        id: 1,
+        name: 'The Shining'
+       }, {
+        id: 2,
+        name: 'Incendies'
+       }, {
+        id: 3,
+        name: 'Rang de Basanti'
+       }, {
+        id: 4,
+        name: 'Finding Nemo'
+       }]
+      
+       res.send(films);
+})
+
+// 2..................................
+// router.get('/movies/:indexNumber', function(req, res){
+//     let movies1 = ['Bahubali', 'Super30', 'Vikram', 'KGF'];
+//     let index = req.params.indexNumber;
+//     console.log(movies1[index]);
+//     res.send(movies1[index]);
+// })
+router.get('/movies/:indexNumber',function (req, res){
+    let moviesName = ["Rang de basanti", "The shining", "Lord of the rings", "Batman begins"]
+    let abc = req.params.indexNumber
+    console.log(moviesName[abc])
+    res.send(moviesName[abc])
+})
 
 router.get('/student-details/:name', function(req, res){
     /*
