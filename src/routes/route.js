@@ -18,13 +18,37 @@ router.get('/students', function (req, res){
 // =======
 
 // >>>>>>> Stashed changes
-// 1
+// 1.............................................
 router.get('/movies', function(req, res){
     let movies = ['Bahubali', 'Super30', 'Vikram', 'KGF'];
     res.send(movies)
 })
 
-//  4
+// 2.................................................
+router.get('/movies/:indexNumber', function(req, res){
+    let movies1 = ['Bahubali', 'Super30', 'Vikram', 'KGF'];
+    let index = req.params.indexNumber;
+    console.log(movies1[index]);
+    res.send(movies1[index]);
+})
+
+//3...................................... 
+router.get('/get-movies/:indexNumber',function(req, res){ 
+    
+    let moviesName=['rang de basanti','The shining','Lord of the rings','batman begins']
+    let index = req.params.indexNumber;
+
+     if(index > moviesName.length){
+        return res.send("use a valid index  ")
+     }else{
+    
+     res.send(moviesName[index])
+     
+     }
+})
+
+
+//  4..............................................
 router.get('/films', function(req, res){
     let films = [ {
         id: 1,
@@ -43,19 +67,22 @@ router.get('/films', function(req, res){
        res.send(films);
 })
 
-// 2..................................
-// router.get('/movies/:indexNumber', function(req, res){
-//     let movies1 = ['Bahubali', 'Super30', 'Vikram', 'KGF'];
-//     let index = req.params.indexNumber;
-//     console.log(movies1[index]);
-//     res.send(movies1[index]);
-// })
-router.get('/movies/:indexNumber',function (req, res){
-    let moviesName = ["Rang de basanti", "The shining", "Lord of the rings", "Batman begins"]
-    let abc = req.params.indexNumber
-    console.log(moviesName[abc])
-    res.send(moviesName[abc])
+
+// 5....................................................
+router.get('/get-/films/:indexNumber',function(req, res){ 
+
+    let moviesName=[ {"id": 1,"name": "The Shining"}, 
+ {"id": 2,"name": "Incendies"}, 
+ {"id": 3,"name": "Rang de Basanti"},
+  {"id": 4,"name": "Finding Nemo"}]
+    let index = req.params.indexNumber;
+     if(index > moviesName.length){
+        return res.send("no movie exist with this id ")
+     }else{
+     res.send(moviesName[index])
+     }
 })
+
 
 router.get('/student-details/:name', function(req, res){
     /*
