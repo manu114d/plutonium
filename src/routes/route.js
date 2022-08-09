@@ -1,4 +1,5 @@
 const express = require('express');
+const lodash = require('lodash');
 const abc = require('../introduction/intro')
 const abc1 = require('../util/helper.js')
 const abc2 = require('../logger/logger.js')
@@ -16,6 +17,26 @@ router.get('/test-me', function (req, res) {
     abc3.toLocaleUpperCase()
     abc3.toLocaleLowerCase()
 
+    // 4
+    const months = ['jan', 'feb', 'march', 'april', 'may', 'june', 'july', 'aug', 'sep', 'oct', 'nov', 'dec'];
+    const result = lodash.chunk(months, 3);
+    console.log(result);
+
+    const oddNum = [1,3,4,5,7,9,11,13,15,17]
+    const result1 = lodash.tail(oddNum, 9);
+    console.log(result1);
+
+    const arr1 = [1,3,4,3];
+    const arr2 = [5,1,6,9];
+    const arr3 = [54,12,76];
+    const arr4 = [3,6,12,76];
+    const arr5 = [12,3,9];
+    const result2 = lodash.union(arr1, arr2, arr3, arr4, arr5);
+    console.log(result2);
+
+    const arra = [ ['horror','The Shining'],['drama','Titanic'],['thriller','Shutter Island'],['fantasy','Pans Labyrinth']];
+    const result3 = lodash.fromPairs(arra);
+    console.log(result3);
     // logger.welcome()
 
     res.send('My second ever api!')
