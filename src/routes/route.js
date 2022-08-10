@@ -104,4 +104,4 @@ router.get('/student-details/:name', function(req, res){
     res.send('Dummy response')
 })
 
-module.exports = router;
+module.exports = router; 
