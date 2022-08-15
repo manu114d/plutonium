@@ -102,20 +102,14 @@ let players =
    ]
 
    router.post('/players', function (req, res) {
-    // let newPlayers = [
-    //     {
-    
-    //             "name": "lokesh",
-    //             "dob": "1/1/1990",
-    //             "gender": "male",
-    //             "city": "mumbai",
-    //             "sports": [
-    //                 "soccer"
-    //             ],
-            
-    //     }
-    // ]
        //LOGIC WILL COME HERE
+       let player = req.body.newplayer;
+       for(let i = 0; i<players.length; i++){
+        if(players[i].name == player.name){
+            return res.send('Sorry this name already exists.')
+        }
+       }
+       players.push(player);
        res.send(  { data: players , status: true }  )
    })
 
