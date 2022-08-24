@@ -7,4 +7,3 @@ let printName = function() {
 module.exports.name = batchName
 module.exports.printName = printName
 
-
