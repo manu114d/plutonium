@@ -21,7 +21,3 @@ router.get("/getBooksWithAuthorDetails", bookController.getBooksWithAuthorDetail
 module.exports = router;
 
 
-
-index.js
-        modified:   introduction/intro.js
-        modified:   routes/route.js
