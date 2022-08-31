@@ -1,7 +1,7 @@
-let a = "     manu   deep   sai      ";
-let b =  a.trim();
+let data = "     MANU   deep   sai      ";
+let trimmer =  data.trim();
 let trim = function(){
-    console.log(b);
+    console.log(trimmer);
 }
 // let b = function(){
 //     let aa = a.trim(); // manu deep sai
@@ -9,20 +9,22 @@ let trim = function(){
 // }
 
 
-let a1 = "MANUDEEP";
-let b1 = a1.toLocaleLowerCase();
-let toLocaleLowerCase = function(){
-    console.log(b1);
+// let data2 = "MANUDEEP";
+let lowerCase = data.toLocaleLowerCase();
+let changetoLowerCase = function(){
+    console.log(lowerCase);
 }
 
-let a2 = "manudeep";
-let b2 = a2.toLocaleUpperCase();
-let toLocaleUpperCase = function(){
-    console.log(b2);
+// let data3 = "manudeep";
+let upperCase = data.toLocaleUpperCase();
+let changetoUpperCase = function(){
+    console.log(upperCase);
 }
 
-
-module.exports.trim =trim;
-module.exports.toLocaleLowerCase =toLocaleLowerCase;
-module.exports.toLocaleUpperCase =toLocaleUpperCase;
+module.exports.trim = trim
+module.exports.changetoLowerCase = changetoLowerCase
+module.exports.changetoUpperCase = changetoUpperCase
+// module.exports.trim =trim;
+// module.exports.toLocaleLowerCase =toLocaleLowerCase;
+// module.exports.toLocaleUpperCase =toLocaleUpperCase;
 

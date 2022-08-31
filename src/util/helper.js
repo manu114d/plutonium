@@ -1,19 +1,22 @@
 const myDate = new Date();
-const nDate = myDate.getDate();
-const nMonth = myDate.getMonth(); 
+const currDate = myDate.getDate();
+const currMonth = myDate.getMonth() + 1 ;
 
 const printDate = function(){
-    console.log("Today's date is", nDate);
-}
+    console.log("Today's date is " + currDate);
+}  
 
 const printMonth = function(){
-    console.log("Current Month is", nMonth+1);
+    console.log("Current Month is " + currMonth);
 }
-const topic = "Nodejs module system";
+
+const batchName = "Plutonium"
+const weekDay = "W3D5"
+const topic = "Nodejs Modules System"
 const getBatchInfo = function(){
-    console.log("Plutonium, W3D5, The topic for today was ", topic);
+    console.log("Batch-Name: " + batchName + ", Week and Day: "+ weekDay + ", Topic: "+ topic);
 }
-// module.exports.nDate = nDate;
+
 module.exports.printDate = printDate;
 module.exports.printMonth = printMonth;
 module.exports.getBatchInfo = getBatchInfo;
