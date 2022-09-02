@@ -91,20 +91,24 @@ router.get("/films", function (req, res) {
 });
 
 // 5....................................................
-router.get("/films/:indexNumber", function (req, res) {
+router.get("/films/:filmId", function (req, res) {
   let moviesName = [
     { id: 0, name: "The Shining" },
     { id: 1, name: "Incendies" },
     { id: 2, name: "Rang de Basanti" },
     { id: 3, name: "Finding Nemo" },
   ];
-  let index = req.params.indexNumber;
-  if (index > moviesName.length) {
-    return res.send("No movie exist with this id ");
-  } else {
-    res.send(moviesName[index]);
+
+  count = 0;
+  let filmId = req.params.filmId;
+  for (let i = 0; i < moviesName.length; i++) {
+    if (moviesName[i].id == filmId) {
+      res.send(moviesName[i]);
+      count++;
+    }
+  }
+  if (count === 0) {
+    res.send("no such movies found with this id");
   }
 });
-
 module.exports = router;
-
